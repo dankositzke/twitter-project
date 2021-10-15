@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+    <h2 style='text-align: center'>Twitter Prediction</h2>
+
+    <p style='text-align: center'>Use the form below to predict which user is more likely to say a given tweet...</p>
+
+    <form style='text-align: center' action="/predict" method="POST">
+
+        <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
+        <label>Twitter User A:</label>
+        <select name="screen_name_a">
+            <option value="elonmusk" selected="true">@elonmusk</option>
+            <option value="jeffbezos">@jeffbezos</option>
+            <option value="RayDalio">@RayDalio</option>
+            <option value="BillGates">@BillGates</option>
+        </select>
+        <br>
+
+        <!-- TODO: Instead of hard-coding these drop-down menu options, dynamically populate them based on user records from the database -->
+        <label>Twitter User B:</label>
+        <select name="screen_name_b">
+            <option value="elonmusk">@elonmusk</option>
+            <option value="jeffbezos" selected="true">@jeffbezos</option>
+            <option value="RayDalio">@RayDalio</option>
+            <option value="BillGates">@BillGates</option>
+        </select>
+        <br>
+
+        <label>Tweet Text:</label>
+        <input type="text" name="tweet_text" placeholder="Enter Tweet Here" value="Enter Tweet Here">
+        <br>
+
+        <button style='text-align: center'>Submit</button>
+    </form>
+
+{% endblock %}
